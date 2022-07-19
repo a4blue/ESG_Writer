@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: webee
+  version: "1.0"
+  description: "webee Event API"
+paths:
+  /api/event:
+    post:
+      summary: Post a new Event
+      description: A descritpion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - event_url
+                - source_url
+                - error_info
+              properties:
+                title:
+                  type: string
+                description_short:
+                  type: string
+                description_long:
+                  type: string
+                timeframe:
+                  type: string
+                source_url:
+                  type: string
+                  description: The Base URL of the Scrapped Website
+                event_url:
+                  type: string
+                  description: Unique Identifier
+                city:
+                  type: string
+                zip_code:
+                  type: string
+                street:
+                  type: string
+                error_info:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Okily Dokily
